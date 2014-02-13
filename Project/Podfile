@@ -1,0 +1,7 @@
+pod "public-works", :path => "../public-works.podspec"
+
+target "Demo" do
+end
+
+target "DemoTests" do
+end
