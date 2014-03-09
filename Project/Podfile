@@ -1,7 +1,9 @@
 pod "public-works", :path => "../public-works.podspec"
 
-target "Demo" do
-end
+xcodeproj 'Public Works/Public Works.xcodeproj'
 
-target "DemoTests" do
-end
+# target "Demo" do
+# end
+
+# target "DemoTests" do
+# end

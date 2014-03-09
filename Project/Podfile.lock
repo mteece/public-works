@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (2.2.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.0):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.0)
+  - AFNetworking/Security (2.2.0)
+  - AFNetworking/Serialization (2.2.0)
+  - AFNetworking/UIKit (2.2.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - NSObject-ObjectMap (2.1)
+  - public-works (0.1.0):
+    - AFNetworking (~> 2.2)
+    - NSObject-ObjectMap (~> 2.1)
+
+DEPENDENCIES:
+  - public-works (from `../public-works.podspec`)
+
+EXTERNAL SOURCES:
+  public-works:
+    :path: ../public-works.podspec
+
+SPEC CHECKSUMS:
+  AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  NSObject-ObjectMap: 724d57574112a60fb74797aff448338a812f7a7f
+  public-works: 235bab6fab13161c68c58ddb95956b38df1364c3
+
+COCOAPODS: 0.29.0
