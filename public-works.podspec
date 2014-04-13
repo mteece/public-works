@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "http://EXAMPLE/NAME"
+  s.homepage         = "https://github.com/mteece/public-works"
   s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Matthew Teece" => "mteece@gmail.com" }
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
+  s.source           = { :git => "git@github.com:mteece/public-works.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/doctorteece'
 
   s.platform     = :ios, '6.0'
@@ -29,8 +29,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes'
   s.resources = 'Assets'
 
-  s.ios.exclude_files = 'Classes/osx'
-  s.osx.exclude_files = 'Classes/ios'
+  s.ios.exclude_files = 'Classes/Exclude/osx'
+  s.osx.exclude_files = 'Classes/Exclude/ios'
   # s.public_header_files = 'Classes/**/*.h'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
   # s.dependency 'JSONKit', '~> 1.4'
