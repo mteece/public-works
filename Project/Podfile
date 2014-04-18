@@ -1,4 +1,8 @@
 pod "public-works", :path => "../public-works.podspec"
+pod 'NSObject-ObjectMap'
+pod 'AFNetworking'
+
+link_with ['Public Works', 'Public WorksTests']
 
 xcodeproj 'Public Works/Public Works.xcodeproj'
 

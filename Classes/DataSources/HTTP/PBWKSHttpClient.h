@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 Matthew Teece. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+@class AFHTTPSessionManager;
 
-@interface PBWKSHttpClient : AFHTTPSessionManager
+@interface PBWKSHttpClient : NSObject
+
++ (PBWKSHttpClient *)sharedPBWKSHttpClient;
+- (void)registerContext:(NSDictionary *)context;
+- (void)unregisterContext;
 
 @end

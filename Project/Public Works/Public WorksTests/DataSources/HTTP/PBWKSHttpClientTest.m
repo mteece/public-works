@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Matthew Teece. All rights reserved.
 //
 
+#import "PBWKSHttpClient.h"
+
 #import <XCTest/XCTest.h>
 
 @interface PBWKSHttpClientTest : XCTestCase
@@ -26,9 +28,18 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testClientCanAllocateSingleton
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //NSURL *url = [[NSURL alloc] initWithString:@"http://www.unittest.com"];
+    NSDictionary *webContext = @{@"url" : @"http://www.unittest.com",
+                                 @"format" : @"json",
+                                 @"version" : @"1"};
+    
+    PBWKSHttpClient *client = [PBWKSHttpClient sharedPBWKSHttpClient];
+    [client registerContext:webContext];
+    
+    XCTAssertNotNil(client, @"PBWKSHttpClient cannot be nil.");
+    //XCTAssertTrue([client baseURL], @"http://www.unittest.com");
 }
 
 @end
