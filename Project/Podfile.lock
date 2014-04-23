@@ -18,15 +18,23 @@ PODS:
   - AFNetworking/UIKit (2.2.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AFRaptureXMLRequestOperation (1.0.3):
+    - AFNetworking (~> 2.0.2)
+    - RaptureXML (~> 1.0.1)
   - NSObject-ObjectMap (2.2)
   - public-works (0.1.0):
     - AFNetworking
+    - AFRaptureXMLRequestOperation
     - NSObject-ObjectMap
+    - RaptureXML
+  - RaptureXML (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - AFRaptureXMLRequestOperation
   - NSObject-ObjectMap
   - public-works (from `../public-works.podspec`)
+  - RaptureXML
 
 EXTERNAL SOURCES:
   public-works:
@@ -34,7 +42,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
+  AFRaptureXMLRequestOperation: 56cf8e0ac06cb52540e1cbe83b49feecca9656e9
   NSObject-ObjectMap: 34aa37705949bd876632f6d57fda846cc7f75c66
-  public-works: fdca434bdde86f92a78b875a82f372fdeedfba91
+  public-works: c635a5861c7400a2358c96db492ac48966125751
+  RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
 
-COCOAPODS: 0.31.1
+COCOAPODS: 0.32.1
