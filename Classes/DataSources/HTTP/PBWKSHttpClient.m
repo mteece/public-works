@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPSessionManager.h"
+#import "PBWKSHttpContext.h"
 
 #import "PBWKSHttpClient.h"
 
@@ -29,11 +30,18 @@
 }
 
 
-- (AFHTTPSessionManager *)setupClientForContext:(NSDictionary *)context {
-    AFHTTPSessionManager *httpSessionClient = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[context objectForKey:@"url"]]];
+- (AFHTTPSessionManager *)setupClientForContext:(PBWKSHttpContext *)context {
+    AFHTTPSessionManager *httpSessionClient = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[context baseUrl]]];
     
-    httpSessionClient.responseSerializer = [AFJSONResponseSerializer serializer];
-    httpSessionClient.requestSerializer = [AFJSONRequestSerializer serializer];
+    if([[context format] isEqualToString:@"json"]) {
+        httpSessionClient.responseSerializer = [AFJSONResponseSerializer serializer];
+        httpSessionClient.requestSerializer = [AFJSONRequestSerializer serializer];
+    } else {
+        httpSessionClient.responseSerializer = [AFXMLParserResponseSerializer serializer];
+        httpSessionClient.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/xml"];
+        // TODO: Need a request serializer.
+    }
+   
     
     //[httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     //[httpClient setDefaultHeader:@"Accept" value:@"application/json"];
@@ -41,7 +49,7 @@
 }
 
 
-- (void)registerContext:(NSDictionary *)context {
+- (void)registerContext:(PBWKSHttpContext *)context {
     self.httpSessionManager = [self setupClientForContext:context];
 }
 

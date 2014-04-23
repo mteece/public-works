@@ -7,11 +7,12 @@
 //
 
 @class AFHTTPSessionManager;
+@class PBWKSHttpContext;
 
 @interface PBWKSHttpClient : NSObject
 
 + (PBWKSHttpClient *)sharedPBWKSHttpClient;
-- (void)registerContext:(NSDictionary *)context;
+- (void)registerContext:(PBWKSHttpContext *)context;
 - (void)unregisterContext;
 
 @end

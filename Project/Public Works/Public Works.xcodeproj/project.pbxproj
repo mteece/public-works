@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54322BA91906EA8C0050BC25 /* PBWKSHttpContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */; };
+		54322BAB1906F2840050BC25 /* PBWKSHttpContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BAA1906F2840050BC25 /* PBWKSHttpContextTest.m */; };
+		54322BAC1906F28D0050BC25 /* PBWKSHttpContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */; };
 		54CA1CFB18FAEF8600502557 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 54CA1CF718FAEF8600502557 /* .gitkeep */; };
 		54CA1CFC18FAEF8600502557 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 54CA1CF918FAEF8600502557 /* .gitkeep */; };
 		54CA1D0018FAF94100502557 /* PBWKSHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CA1CFF18FAF94100502557 /* PBWKSHttpClient.m */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		0BC0DD84BA9045EDBD0D9212 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		54322BA71906EA8C0050BC25 /* PBWKSHttpContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSHttpContext.h; sourceTree = "<group>"; };
+		54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWKSHttpContext.m; sourceTree = "<group>"; };
+		54322BAA1906F2840050BC25 /* PBWKSHttpContextTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWKSHttpContextTest.m; sourceTree = "<group>"; };
 		54CA1CF718FAEF8600502557 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		54CA1CF918FAEF8600502557 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		54CA1CFE18FAF94100502557 /* PBWKSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSHttpClient.h; sourceTree = "<group>"; };
@@ -100,9 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54322BA61906EA5C0050BC25 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		54CA1CF218FAEF8600502557 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				54322BA61906EA5C0050BC25 /* Repository */,
 				54CA1CF318FAEF8600502557 /* HTTP */,
 			);
 			path = DataSources;
@@ -113,6 +127,8 @@
 			children = (
 				54CA1CFE18FAF94100502557 /* PBWKSHttpClient.h */,
 				54CA1CFF18FAF94100502557 /* PBWKSHttpClient.m */,
+				54322BA71906EA8C0050BC25 /* PBWKSHttpContext.h */,
+				54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				54CA1D0418FB153300502557 /* PBWKSHttpClientTest.m */,
+				54322BAA1906F2840050BC25 /* PBWKSHttpContextTest.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -437,6 +454,7 @@
 				54DED23E18AD1C0A00B5A7E1 /* PWAppDelegate.m in Sources */,
 				54CA1D0018FAF94100502557 /* PBWKSHttpClient.m in Sources */,
 				54DED24718AD1C0A00B5A7E1 /* PWFirstViewController.m in Sources */,
+				54322BA91906EA8C0050BC25 /* PBWKSHttpContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CA1D0118FAF94100502557 /* PBWKSHttpClient.m in Sources */,
+				54322BAC1906F28D0050BC25 /* PBWKSHttpContext.m in Sources */,
+				54322BAB1906F2840050BC25 /* PBWKSHttpContextTest.m in Sources */,
 				54CA1D0518FB153300502557 /* PBWKSHttpClientTest.m in Sources */,
 				54DED25F18AD1C0A00B5A7E1 /* Public_WorksTests.m in Sources */,
 			);
