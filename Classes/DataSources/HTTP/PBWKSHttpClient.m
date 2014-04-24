@@ -23,6 +23,8 @@
 @implementation PBWKSHttpClient
 
 @synthesize httpSessionManager;
+@synthesize supportedFormats;
+@synthesize clientFormat;
 
 + (PBWKSHttpClient *)sharedPBWKSHttpClient {
     static PBWKSHttpClient *_sharedPBWKSHttpClient = nil;
@@ -33,6 +35,18 @@
     return _sharedPBWKSHttpClient;
 }
 
+- (instancetype)init {
+    
+    self = [super init];
+    
+    if (self) {
+        [self setSupportedFormats:@[@"json", @"xml", @"other"]];
+    }
+    
+    return self;
+
+}
+
 - (AFHTTPSessionManager *)setupClientForContext:(PBWKSHttpContext *)context {
     AFHTTPSessionManager *httpSessionClient = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[context baseUrl]]];
     
@@ -40,7 +54,7 @@
         case PBWKSHttpRequestFormatJSON:
             httpSessionClient.responseSerializer = [AFJSONResponseSerializer serializer];
             httpSessionClient.requestSerializer = [AFJSONRequestSerializer serializer];
-
+            
             break;
         case PBWKSHttpRequestFormatXML:
             httpSessionClient.responseSerializer = [AFXMLParserResponseSerializer serializer];
@@ -61,12 +75,14 @@
 
 
 - (void)registerContext:(PBWKSHttpContext *)context {
-    self.httpSessionManager = [self setupClientForContext:context];
+    [self setHttpSessionManager:[self setupClientForContext:context]];
+    [self setClientFormat:[[self supportedFormats] objectAtIndex:[context requestFormat]]];
 }
 
 - (void)unregisterContext {
     
     self.httpSessionManager = nil;
+    self.clientFormat = nil;
 }
 
 @end

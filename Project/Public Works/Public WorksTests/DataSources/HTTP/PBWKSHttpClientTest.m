@@ -52,6 +52,32 @@
     
 }
 
+- (void)testHttpClientWillUnregister
+{
+    PBWKSHttpContext *context = [[PBWKSHttpContext alloc] init];
+    
+    NSDictionary *options = @{@"token" : @"1234567890",
+                              @"user" : @"test",
+                              @"email" : @"test@email.com"};
+    
+    
+    [context setBaseUrl:@"http://www.unittest.com"];
+    [context setRequestFormat:PBWKSHttpRequestFormatJSON];
+    [context setVersion:1.0];
+    [context setOptions:options];
+    
+    PBWKSHttpClient *client = [PBWKSHttpClient sharedPBWKSHttpClient];
+    [client registerContext:context];
+    
+    XCTAssertNotNil(client, @"PBWKSHttpClient cannot be nil.");
+    XCTAssertEqual([client clientFormat], @"json", @"PBWKSHttpClient clientFormat expected 'json'.");
+    
+    [client unregisterContext];
+    
+    XCTAssertNil([client httpSessionManager], @"PBWKSHttpClient httpSessionManager instance expected nil.");
+    XCTAssertNil([client clientFormat], @"PBWKSHttpClient clientFormat expected nil.");
+}
+
 - (void)testClientCanPostData
 {
     // POST is Content-Type: application/x-www-form-urlencoded

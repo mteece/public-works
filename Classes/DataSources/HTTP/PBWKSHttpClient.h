@@ -16,5 +16,7 @@
 - (void)unregisterContext;
 
 @property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
+@property (nonatomic, copy) NSArray *supportedFormats;
+@property (nonatomic, copy) NSString *clientFormat;
 
 @end
