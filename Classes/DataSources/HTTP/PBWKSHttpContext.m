@@ -11,7 +11,7 @@
 @implementation PBWKSHttpContext
 
 @synthesize baseUrl;
-@synthesize format;
+@synthesize requestFormat;
 @synthesize version;
 @synthesize options;
 

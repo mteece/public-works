@@ -5,6 +5,8 @@
 //  Created by Matthew Teece on 4/22/14.
 //  Copyright (c) 2014 Matthew Teece. All rights reserved.
 //
+
+
 #import "PBWKSHttpContext.h"
 
 #import <XCTest/XCTest.h>
@@ -37,12 +39,11 @@
 
     
     [context setBaseUrl:@"http://www.unittest.com"];
-    [context setFormat:@"json"];
+    [context setRequestFormat:PBWKSHttpRequestFormatXML]; // PBWKSHttpRequestFormatJSON
     [context setVersion:1.0];
     [context setOptions:options];
     
     XCTAssertNotNil(context, @"PBWKSHttpContext cannot be nil.");
-
 }
 
 @end

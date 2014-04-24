@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PBWKSConstants.h"
+
 @interface PBWKSHttpContext : NSObject
 
 @property (nonatomic, copy) NSString *baseUrl;
-@property (nonatomic, copy) NSString *format;
+@property (nonatomic, assign) PBWKSHttpRequestFormat requestFormat;
 @property (nonatomic, assign) float version;
 @property (nonatomic, copy) NSDictionary *options;
 

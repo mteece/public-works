@@ -10,6 +10,8 @@
 		54322BA91906EA8C0050BC25 /* PBWKSHttpContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */; };
 		54322BAB1906F2840050BC25 /* PBWKSHttpContextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BAA1906F2840050BC25 /* PBWKSHttpContextTest.m */; };
 		54322BAC1906F28D0050BC25 /* PBWKSHttpContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */; };
+		547ADDB21909948200780145 /* PBWKSXMLRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547ADDB11909948200780145 /* PBWKSXMLRequestSerializer.m */; };
+		547ADDB31909948200780145 /* PBWKSXMLRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547ADDB11909948200780145 /* PBWKSXMLRequestSerializer.m */; };
 		54CA1CFB18FAEF8600502557 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 54CA1CF718FAEF8600502557 /* .gitkeep */; };
 		54CA1CFC18FAEF8600502557 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 54CA1CF918FAEF8600502557 /* .gitkeep */; };
 		54CA1D0018FAF94100502557 /* PBWKSHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CA1CFF18FAF94100502557 /* PBWKSHttpClient.m */; };
@@ -50,6 +52,9 @@
 		54322BA71906EA8C0050BC25 /* PBWKSHttpContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSHttpContext.h; sourceTree = "<group>"; };
 		54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWKSHttpContext.m; sourceTree = "<group>"; };
 		54322BAA1906F2840050BC25 /* PBWKSHttpContextTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWKSHttpContextTest.m; sourceTree = "<group>"; };
+		547ADDB01909948200780145 /* PBWKSXMLRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSXMLRequestSerializer.h; sourceTree = "<group>"; };
+		547ADDB11909948200780145 /* PBWKSXMLRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWKSXMLRequestSerializer.m; sourceTree = "<group>"; };
+		547ADDB419099ACC00780145 /* PBWKSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSConstants.h; sourceTree = "<group>"; };
 		54CA1CF718FAEF8600502557 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		54CA1CF918FAEF8600502557 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		54CA1CFE18FAF94100502557 /* PBWKSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWKSHttpClient.h; sourceTree = "<group>"; };
@@ -129,6 +134,8 @@
 				54CA1CFF18FAF94100502557 /* PBWKSHttpClient.m */,
 				54322BA71906EA8C0050BC25 /* PBWKSHttpContext.h */,
 				54322BA81906EA8C0050BC25 /* PBWKSHttpContext.m */,
+				547ADDB01909948200780145 /* PBWKSXMLRequestSerializer.h */,
+				547ADDB11909948200780145 /* PBWKSXMLRequestSerializer.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -276,6 +283,7 @@
 				54CA1CF418FAEF8600502557 /* Delegates */,
 				54CA1CF518FAEF8600502557 /* Exclude */,
 				54CA1CFA18FAEF8600502557 /* Models */,
+				547ADDB419099ACC00780145 /* PBWKSConstants.h */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -449,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547ADDB21909948200780145 /* PBWKSXMLRequestSerializer.m in Sources */,
 				54DED23A18AD1C0A00B5A7E1 /* main.m in Sources */,
 				54DED24A18AD1C0A00B5A7E1 /* PWSecondViewController.m in Sources */,
 				54DED23E18AD1C0A00B5A7E1 /* PWAppDelegate.m in Sources */,
@@ -467,6 +476,7 @@
 				54322BAB1906F2840050BC25 /* PBWKSHttpContextTest.m in Sources */,
 				54CA1D0518FB153300502557 /* PBWKSHttpClientTest.m in Sources */,
 				54DED25F18AD1C0A00B5A7E1 /* Public_WorksTests.m in Sources */,
+				547ADDB31909948200780145 /* PBWKSXMLRequestSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

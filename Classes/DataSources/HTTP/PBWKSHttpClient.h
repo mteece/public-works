@@ -15,4 +15,6 @@
 - (void)registerContext:(PBWKSHttpContext *)context;
 - (void)unregisterContext;
 
+@property (nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "PBWKSHttpClient.h"
+#import "PBWKSHttpContext.h"
+#import "AFHTTPSessionManager.h"
 
 #import <XCTest/XCTest.h>
 
@@ -30,16 +32,71 @@
 
 - (void)testClientCanAllocateSingleton
 {
-    //NSURL *url = [[NSURL alloc] initWithString:@"http://www.unittest.com"];
-    NSDictionary *webContext = @{@"url" : @"http://www.unittest.com",
-                                 @"format" : @"json",
-                                 @"version" : @"1"};
+    PBWKSHttpContext *context = [[PBWKSHttpContext alloc] init];
+    
+    NSDictionary *options = @{@"token" : @"1234567890",
+                              @"user" : @"test",
+                              @"email" : @"test@email.com"};
+    
+    
+    [context setBaseUrl:@"http://www.unittest.com"];
+    [context setRequestFormat:PBWKSHttpRequestFormatJSON];
+    [context setVersion:1.0];
+    [context setOptions:options];
     
     PBWKSHttpClient *client = [PBWKSHttpClient sharedPBWKSHttpClient];
-    [client registerContext:webContext];
+    [client registerContext:context];
     
     XCTAssertNotNil(client, @"PBWKSHttpClient cannot be nil.");
-    //XCTAssertTrue([client baseURL], @"http://www.unittest.com");
+    XCTAssertNotNil([client httpSessionManager], @"PBWKSHttpClient httpSessionManager instance cannot be nil.");
+    
+}
+
+- (void)testClientCanPostData
+{
+    // POST is Content-Type: application/x-www-form-urlencoded
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    NSDictionary *credentials = @{
+                                  @"email" : @"test@email.com",
+                                  @"password" : @"password",
+                                  @"device" : @"Test iPhone",
+                                  @"device_type": @"iPhone",
+                                  @"device_identifier": @"123456789"
+                                  };
+
+    
+    PBWKSHttpContext *context = [[PBWKSHttpContext alloc] init];
+    
+    NSDictionary *options = @{@"token" : @"1234567890",
+                              @"user" : @"test",
+                              @"email" : @"test@email.com"};
+    
+    
+    [context setBaseUrl:@"http://requestb.in/"];
+    [context setRequestFormat:PBWKSHttpRequestFormatXML];
+    [context setVersion:1.0];
+    [context setOptions:options];
+    
+    PBWKSHttpClient *client = [PBWKSHttpClient sharedPBWKSHttpClient];
+    [client registerContext:context];
+    
+    [[client httpSessionManager] POST:@"1cwudx61" parameters:credentials success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"%@", responseObject);
+        XCTAssertTrue(YES, "Success");
+        dispatch_semaphore_signal(semaphore);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+        XCTAssertFalse(YES, @"Failed");
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+
 }
 
 @end
