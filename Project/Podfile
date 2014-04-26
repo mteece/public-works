@@ -6,6 +6,13 @@ pod 'AFRaptureXMLRequestOperation'
 
 link_with ['Public Works', 'Public WorksTests']
 
+target :unit_tests, :exclusive => true do
+  link_with 'Public WorksTests'
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'OCMock'
+end
+
 xcodeproj 'Public Works/Public Works.xcodeproj'
 
 # target "Demo" do
