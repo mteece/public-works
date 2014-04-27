@@ -8,7 +8,6 @@
 
 #import "PBWKSConstants.h"
 #import "AFHTTPSessionManager.h"
-#import "AFRaptureXMLRequestOperation.h"
 #import "PBWKSHttpContext.h"
 #import "PBWKSXMLRequestSerializer.h"
 

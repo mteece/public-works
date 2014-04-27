@@ -1,8 +1,6 @@
 pod "public-works", :path => "../public-works.podspec"
 pod 'NSObject-ObjectMap'
 pod 'AFNetworking'
-pod 'RaptureXML'
-pod 'AFRaptureXMLRequestOperation'
 
 link_with ['Public Works', 'Public WorksTests']
 
