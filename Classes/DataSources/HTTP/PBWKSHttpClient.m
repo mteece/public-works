@@ -19,11 +19,11 @@
 
 @end
 
-@implementation PBWKSHttpClient
-
-@synthesize httpSessionManager;
-@synthesize supportedFormats;
-@synthesize clientFormat;
+@implementation PBWKSHttpClient {
+    AFHTTPSessionManager *_httpSessionManager;
+    NSArray *_supportedFormats;
+    NSString *_clientFormat;
+}
 
 + (PBWKSHttpClient *)sharedPBWKSHttpClient {
     static PBWKSHttpClient *_sharedPBWKSHttpClient = nil;
