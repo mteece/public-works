@@ -19,11 +19,9 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Expecta (0.3.0)
-  - NSObject-ObjectMap (2.2)
   - OCMock (2.2.4)
   - public-works (0.1.0):
     - AFNetworking
-    - NSObject-ObjectMap
   - Specta (0.2.1)
 
 DEPENDENCIES:
@@ -40,9 +38,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 8dde8c8a6597ad95dac332a593c27e541bc87371
   Expecta: ce8a51b9fad15a2cd573b291cb2909aaed865350
-  NSObject-ObjectMap: d79d5b98304f60fb137f0c599245ce3e05cb8cdc
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
-  public-works: fdca434bdde86f92a78b875a82f372fdeedfba91
+  public-works: eac0a44d7a840355e737c78ee4d8c1c5ddded7aa
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
 COCOAPODS: 0.33.1

@@ -34,6 +34,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Classes/**/*.h'
   # s.frameworks = 'SomeFramework', 'AnotherFramework'
   # s.dependency 'JSONKit', '~> 1.4'
-  s.dependency 'NSObject-ObjectMap'
   s.dependency 'AFNetworking'
 end
